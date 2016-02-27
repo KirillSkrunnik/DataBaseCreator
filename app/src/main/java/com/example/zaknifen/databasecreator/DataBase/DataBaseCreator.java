@@ -11,14 +11,14 @@ public class DataBaseCreator extends SQLiteOpenHelper {
     public static final int DB_VERSION = 1;
 
 
-    public static class User implements BaseColumns{
+    public static class UserColumns implements BaseColumns{
         public static final String TABLE_NAME = "users";
         public static final String NAME  = "name";
     }
 
-    static String CREATE_TABLE_USER = " CREATE_TABLE" + User.TABLE_NAME + " (" +
-            User._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            User.NAME + " TEXT" + ");";
+    static String CREATE_TABLE_USER = " CREATE_TABLE" + UserColumns.TABLE_NAME + " (" +
+            UserColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            UserColumns.NAME + " TEXT" + ");";
 
     public DataBaseCreator(Context context) {
         super(context, DB_NAME,null, DB_VERSION);
@@ -32,7 +32,7 @@ public class DataBaseCreator extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase , int i, int i1) {
 
     }
 }
